@@ -4,4 +4,7 @@
 
 
 def add(a: float, b: float) -> float:
+    """add two floating int
+
+    """
     return a + b
