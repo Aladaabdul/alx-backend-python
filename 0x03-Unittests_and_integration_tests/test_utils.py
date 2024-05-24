@@ -11,7 +11,6 @@ from utils import access_nested_map, get_json, memoize
 from typing import Mapping, Sequence, Any, Dict
 
 
-
 class TestAccessNestedMap(unittest.TestCase):
     """TestAccessNestedMap Class
 
@@ -73,6 +72,7 @@ class TestGetJson(unittest.TestCase):
         self.assertEqual(result, test_payload)
         mock.assert_called_once()
         patcher.stop()
+
 
 class TestMemoize(unittest.TestCase):
     """TestMemoize Class
