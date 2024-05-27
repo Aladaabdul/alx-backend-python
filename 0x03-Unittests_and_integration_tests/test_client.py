@@ -53,7 +53,7 @@ class TestGithubOrgClient(unittest.TestCase):
             repo: Dict[str, Dict],
             licence_key: str,
             expected: Any
-            ):
+            ) -> bool:
         """test_has_licence function
 
         """
