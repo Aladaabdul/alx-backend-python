@@ -50,10 +50,10 @@ class TestGithubOrgClient(unittest.TestCase):
         ])
     def test_has_license(
             self,
-            repo: Dict[str, Dict],
-            licence_key: str,
-            expected: Any
-            ) -> bool:
+            repo
+            licence_key
+            expected
+            ):
         """test_has_licence function
 
         """
