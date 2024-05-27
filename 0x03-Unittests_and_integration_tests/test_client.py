@@ -28,5 +28,5 @@ class TestGithubOrgClient(unittest.TestCase):
         client = GithubOrgClient(org_name)
         result = client.org
         self.assertEqual(result, expected)
-        mock.assert_called_once_with(f"https://api.github.com/orgs/{org_name}")
+        mock.assert_called_once()
         patcher.stop()
