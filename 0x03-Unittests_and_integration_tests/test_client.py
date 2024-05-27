@@ -31,8 +31,6 @@ class TestGithubOrgClient(unittest.TestCase):
         mock.assert_called_once_with(f"https://api.github.com/orgs/{org_name}")
         patcher.stop()
 
-
-
     def test_public_repos_url(self):
         """test_public_repos_url function
 
@@ -44,3 +42,14 @@ class TestGithubOrgClient(unittest.TestCase):
             url = mock__public_repos_url.return_value
             result = GithubOrgClient._public_repos_url
             self.assertEqual(result, url)
+
+    @parameterized.expand([
+        ({"license": {"key": "my_license"}}, "my_license", True),
+        ({"license": {"key": "other_license"}}, "my_license", False)
+        ])
+    def test_has_license(self, repo, licence_key, expected):
+        """test_has_licence function
+
+        """
+        result = GithubOrgClient.has_license(repo, licence_key)
+        self.assertEqual(result, expected)
